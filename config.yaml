@@ -1,0 +1,46 @@
+# ============================================================
+# vlessFinder — конфигурация
+# ============================================================
+
+# Репозитории с VLESS ключами (публичные GitHub raw URLs)
+repos:
+  - "https://github.com/zieng2/wl/blob/main/vless_universal.txt"
+  - "https://github.com/zieng2/wl/blob/main/vless_lite.txt"
+
+# Пользователи и их подписки
+# token — уникальный UUID, является частью URL подписки:
+#   http://your-server:8080/sub/<token>
+# keys_count — количество рабочих ключей в подписке (3–5)
+#
+# Управление пользователями:
+#   vlessfinder add-user <имя> [--keys-count N]   — добавить пользователя
+#   vlessfinder remove-user <имя>                  — удалить пользователя
+users:
+  admin:
+    token: "a8b2545c-9b29-43b0-86aa-c18175cbdcc8"
+    keys_count: 3
+
+# Настройки валидации ключей
+validation:
+  tcp_timeout: 3.0                           # таймаут TCP connect (сек)
+  proxy_test_url: "https://www.gstatic.com/generate_204"
+  proxy_test_timeout: 10.0                   # таймаут прокси-теста (сек)
+  proxy_local_port_start: 10800              # диапазон портов для xray инстансов
+  xray_binary: "/usr/local/bin/xray"         # путь к xray-core бинарю
+  xray_startup_wait: 1.5                     # время ожидания после запуска xray (сек)
+  max_proxy_concurrency: 3                   # параллельных xray процессов
+
+# HTTP сервер
+server:
+  host: "0.0.0.0"
+  port: 8080
+
+# Планировщик обновления ключей
+scheduler:
+  refresh_interval_minutes: 30
+
+# Файлы
+paths:
+  pid_file: "/var/run/vlessfinder.pid"
+  log_file: "/var/log/vlessfinder.log"
+  state_dir: "/var/lib/vlessfinder"           # рабочие ключи и подписки
