@@ -3,10 +3,10 @@
 # vlessFinder — установщик / деинсталлятор
 #
 # Установка:
-#   bash <(curl -Ls https://raw.githubusercontent.com/YOUR_USER/vlessFinder/main/install.sh)
+#   bash <(curl -Ls https://raw.githubusercontent.com/vless-finder/vlessFinder/main/install.sh)
 #
 # Удаление:
-#   bash <(curl -Ls https://raw.githubusercontent.com/YOUR_USER/vlessFinder/main/install.sh) uninstall
+#   bash <(curl -Ls https://raw.githubusercontent.com/vless-finder/vlessFinder/main/install.sh) uninstall
 #
 # Поддерживаемые ОС: Ubuntu 20.04+, Debian 11+
 # =============================================================================
@@ -17,7 +17,7 @@ set -euo pipefail
 # Настройки — измените на свой GitHub репозиторий
 # =============================================================================
 
-GITHUB_USER="YOUR_GITHUB_USER"
+GITHUB_USER="vless-finder"
 GITHUB_REPO="vlessFinder"
 GITHUB_BRANCH="main"
 REPO_RAW="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}"
