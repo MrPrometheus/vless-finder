@@ -128,8 +128,15 @@ def run_server(cfg: dict) -> None:
         id='refresh',
         next_run_time=datetime.datetime.now()  # первый запуск сразу
     )
-    scheduler.start()
-    log.info(f"Планировщик запущен (интервал: {interval} мин)")
+
+    @app.on_event("startup")
+    async def _startup():
+        scheduler.start()
+        log.info(f"Планировщик запущен (интервал: {interval} мин)")
+
+    @app.on_event("shutdown")
+    async def _shutdown():
+        scheduler.shutdown(wait=False)
 
     host = cfg['server']['host']
     port = cfg['server']['port']
