@@ -4,8 +4,8 @@
 
 # Репозитории с VLESS ключами (публичные GitHub raw URLs)
 repos:
-  - "https://github.com/zieng2/wl/blob/main/vless_universal.txt"
-  - "https://github.com/zieng2/wl/blob/main/vless_lite.txt"
+  - "https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt"
+  - "https://raw.githubusercontent.com/zieng2/wl/main/vless_lite.txt"
 
 # Пользователи и их подписки
 # token — уникальный UUID, является частью URL подписки:
