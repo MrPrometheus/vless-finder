@@ -17,8 +17,8 @@ repos:
 #   vlessfinder remove-user <имя>                  — удалить пользователя
 users:
   admin:
-    token: "a8b2545c-9b29-43b0-86aa-c18175cbdcc8"
-    keys_count: 3
+    token: "00000000-0000-0000-0000-000000000000"
+    keys_count: 5
 
 # Настройки валидации ключей
 validation:
